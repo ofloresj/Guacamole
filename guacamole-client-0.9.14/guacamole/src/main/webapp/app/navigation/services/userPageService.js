@@ -276,18 +276,36 @@ angular.module('navigation').factory('userPageService', ['$injector',
         angular.forEach(canManageConnections, function addConnectionManagementLink(dataSource) {
             pages.push(new PageDefinition({
                 name : [
-                    'USER_MENU.ACTION_MANAGE_CONNECTIONS',
-                    translationStringService.canonicalize('DATA_SOURCE_' + dataSource) + '.NAME'
+                'USER_MENU.ACTION_MANAGE_CONNECTIONS',
+                translationStringService.canonicalize('DATA_SOURCE_' + dataSource) + '.NAME'
                 ],
                 url  : '/settings/' + encodeURIComponent(dataSource) + '/connections'
             }));
         });
+
+        
+        pages.push(new PageDefinition({
+            name : 'Secure Cli',
+            url  : '/settings/secure-cli'
+        }));
+
+        pages.push(new PageDefinition({
+            name : 'Secure Gui',
+            url  : '/settings/secure-gui'
+        }));
+
+        pages.push(new PageDefinition({
+            name : 'Pass manager',
+            url  : '/settings/pass-man'
+        }));        
 
         // Add link to user preferences (always accessible)
         pages.push(new PageDefinition({
             name : 'USER_MENU.ACTION_MANAGE_PREFERENCES',
             url  : '/settings/preferences'
         }));
+
+        console.log(pages);
 
         return pages;
     };

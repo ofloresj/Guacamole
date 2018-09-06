@@ -20,7 +20,7 @@
 /**
  * A directive for managing all users in the system.
  */
-angular.module('settings').directive('guacSettingsSecureCli', [function guacSettingsUsers() {
+angular.module('settings').directive('guacSettingsSecureCli', [function guacSettingsSecureCli() {
     
     return {
         // Element only
@@ -30,10 +30,28 @@ angular.module('settings').directive('guacSettingsSecureCli', [function guacSett
         scope: {
         },
 
-        templateUrl: 'app/settings/templates/guacSettingsSecureCli.html',
-        controller: ['$scope', '$injector', function guacSettingsSecureCli($scope, $injector) {
+        templateUrl: 'app/settings/templates/settingsSecureCli.html',
+        controller: ['$scope', '$injector', function settingsSecureCliController($scope, $injector) {
 
-            console.log("hola culeros")
+            // Required types
+            var ManageableUser  = $injector.get('ManageableUser');
+            var PermissionSet   = $injector.get('PermissionSet');
+            var SortOrder       = $injector.get('SortOrder');
+
+            // Required services
+            var $location              = $injector.get('$location');
+            var $translate             = $injector.get('$translate');
+            var authenticationService  = $injector.get('authenticationService');
+            var dataSourceService      = $injector.get('dataSourceService');
+            var guacNotification       = $injector.get('guacNotification');
+            var permissionService      = $injector.get('permissionService');
+            var userService            = $injector.get('userService');
+
+            // Identifier of the current user
+            var currentUsername = authenticationService.getCurrentUsername();
+
+            console.log("Hola Mundo!!!")
+
 
             
         }]
