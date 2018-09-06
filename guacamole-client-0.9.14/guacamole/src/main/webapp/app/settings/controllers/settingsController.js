@@ -43,10 +43,14 @@ angular.module('manage').controller('settingsController', ['$scope', '$injector'
      */
     $scope.activeTab = $routeParams.tab;
 
+    console.log($scope.activeTab);
+
     // Retrieve settings pages
     userPageService.getSettingsPages()
     .then(function settingsPagesRetrieved(pages) {
         $scope.settingsPages = pages;
+
+        console.log($scope.settingsPages);
     });
 
 }]);

@@ -20,7 +20,7 @@
 /**
  * A directive for managing all users in the system.
  */
-angular.module('settings').directive('guacSettingsSecureCli', [function guacSettingsSecureCli() {
+angular.module('settings').directive('guacSettingsSecurecli', [function guacSettingsSecurecli() {
     
     return {
         // Element only

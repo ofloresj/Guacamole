@@ -283,7 +283,7 @@ angular.module('navigation').factory('userPageService', ['$injector',
             }));
         });
 
-        
+
         pages.push(new PageDefinition({
             name : 'Secure Cli',
             url  : '/settings/secure-cli'
@@ -295,7 +295,7 @@ angular.module('navigation').factory('userPageService', ['$injector',
         }));
 
         pages.push(new PageDefinition({
-            name : 'Pass manager',
+            name : 'Pass Manager',
             url  : '/settings/pass-man'
         }));        
 
