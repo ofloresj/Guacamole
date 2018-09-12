@@ -172,6 +172,9 @@ angular.module('navigation').factory('userPageService', ['$injector',
         var canManageConnections = [];
         var canViewConnectionRecords = [];
         var canManageSessions = [];
+        var cli = false;
+        var gui  = false;
+        var pass  = false;
 
         // Inspect the contents of each provided permission set
         angular.forEach(authenticationService.getAvailableDataSources(), function inspectPermissions(dataSource) {
@@ -283,11 +286,13 @@ angular.module('navigation').factory('userPageService', ['$injector',
             }));
         });
 
-
-        pages.push(new PageDefinition({
-            name : 'Secure Cli',
-            url  : '/settings/secure-cli'
-        }));
+        if (cli) {
+            pages.push(new PageDefinition({
+                name : 'Secure Cli',
+                url  : '/settings/secure-cli'
+            }));
+        }
+        
 
         pages.push(new PageDefinition({
             name : 'Secure Gui',
@@ -304,8 +309,6 @@ angular.module('navigation').factory('userPageService', ['$injector',
             name : 'USER_MENU.ACTION_MANAGE_PREFERENCES',
             url  : '/settings/preferences'
         }));
-
-        console.log(pages);
 
         return pages;
     };

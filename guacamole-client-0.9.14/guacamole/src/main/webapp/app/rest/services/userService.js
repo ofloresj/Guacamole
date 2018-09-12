@@ -170,6 +170,8 @@ angular.module('rest').factory('userService', ['$injector',
             token : authenticationService.getCurrentToken()
         };
 
+        console.log(user);
+
         // Create user
         return $http({
             method  : 'POST',
@@ -207,6 +209,8 @@ angular.module('rest').factory('userService', ['$injector',
         var httpParameters = {
             token : authenticationService.getCurrentToken()
         };
+
+        console.log(user);
 
         // Update user
         return $http({

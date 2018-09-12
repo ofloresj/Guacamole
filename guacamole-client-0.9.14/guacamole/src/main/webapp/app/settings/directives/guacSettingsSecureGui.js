@@ -20,7 +20,7 @@
 /**
  * A directive for managing all users in the system.
  */
-angular.module('settings').directive('guacSettingsSecureCli', [function guacSettingsSecureCli() {
+angular.module('settings').directive('guacSettingsSecureGui', [function guacSettingsSecureGui() {
     
     return {
         // Element only
@@ -30,10 +30,10 @@ angular.module('settings').directive('guacSettingsSecureCli', [function guacSett
         scope: {
         },
 
-        templateUrl: 'app/settings/templates/settingsSecureCli.html',
-        controller: ['$scope', '$injector', function settingsSecureCliController($scope, $injector) {
+        templateUrl: 'app/settings/templates/settingsSecureGui.html',
+        controller: ['$scope', '$injector', function settingsSecureGuiController($scope, $injector) {
 
-            console.log("Hola Mundo Security Cli!!!");
+            console.log("Hola Mundo Security Gui!!!");
             
         }]
     };

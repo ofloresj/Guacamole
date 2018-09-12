@@ -39,10 +39,66 @@
             </table>
         </div>
 
+
         <!-- User attributes section -->
         <div class="attributes" ng-show="canChangeAttributes()">
             <guac-form namespace="'USER_ATTRIBUTES'" content="attributes"
                        model="user.attributes" model-only="!canChangeAllAttributes()"></guac-form>
+        </div>
+
+        <div class="attributes">
+            <h2 class="header">Secure Access</h2>
+            <div class="section">
+                <table class="properties">
+                    <tr >
+                        <td>
+                            <div class="col-md-12">
+                                <div class="form-check">
+                                    <!--<input class="form-check-input" type="radio" name="cli" id="cli" value="">-->
+                                    <input type="checkbox" ng-model="user.cli" ng-change="user.cli.value">
+                                    <!--<input type="checkbox" ng-model="user.cli" ng-change=""/>-->
+                                    <label class="form-check-label" for="cli">
+                                        Secure Cli
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-check">
+                                    <!--<input class="form-check-input" type="radio" name="gui" id="gui" value="">-->
+                                    <input type="checkbox" ng-model="user.gui" ng-change="user.gui.value">
+                                    <label class="form-check-label" for="gui">
+                                        Secure Gui
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="attributes">
+            <h2 class="header">Password Request</h2>
+            <div class="section">
+                <table class="properties">
+                    <tr >
+                        <td>
+                            <div class="col-md-12">
+                                <div class="form-check">
+                                    <input type="checkbox" ng-model="user.passReq" ng-change="user.passReq.value">
+                                    <label class="form-check-label" for="si">
+                                        Yes
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                </table>
+            </div>
         </div>
 
         <!-- System permissions section -->
@@ -64,6 +120,9 @@
                 </table>
             </div>
         </div>
+
+        
+
 
         <!-- Connection permissions section -->
         <div class="connection-permissions" ng-show="canChangePermissions()">

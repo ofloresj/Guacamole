@@ -1113,7 +1113,9 @@ angular.module('manage').controller('manageUserController', ['$scope', '$injecto
         // Save or create the user, depending on whether the user exists
         var saveUserPromise;
         if ($scope.userExists(selectedDataSource))
+
             saveUserPromise = userService.saveUser(selectedDataSource, $scope.user);
+
         else
             saveUserPromise = userService.createUser(selectedDataSource, $scope.user);
 

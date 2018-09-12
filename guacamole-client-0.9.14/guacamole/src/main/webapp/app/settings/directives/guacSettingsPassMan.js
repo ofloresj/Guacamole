@@ -20,7 +20,8 @@
 /**
  * A directive for managing all users in the system.
  */
-angular.module('settings').directive('guacSettingsSecureCli', [function guacSettingsSecureCli() {
+angular.module('settings').directive('guacSettingsPm', [function guacSettingsPm() {
+    
     
     return {
         // Element only
@@ -30,12 +31,18 @@ angular.module('settings').directive('guacSettingsSecureCli', [function guacSett
         scope: {
         },
 
-        templateUrl: 'app/settings/templates/settingsSecureCli.html',
-        controller: ['$scope', '$injector', function settingsSecureCliController($scope, $injector) {
+        templateUrl: 'app/settings/templates/settingsPassMan.html',
+        controller: ['$scope', '$injector', function settingsPassManController($scope, $injector) {
 
-            console.log("Hola Mundo Security Cli!!!");
+            console.log("Hola Mundo Security BATCH!!!");
             
         }]
     };
     
 }]);
+
+
+
+    
+
+        
